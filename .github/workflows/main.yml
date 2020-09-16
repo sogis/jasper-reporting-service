@@ -50,6 +50,6 @@ jobs:
           name: sogis/jasper-reporting-service
           username: ${{ secrets.DOCKER_HUB_USER }}
           password: ${{ secrets.DOCKER_HUB_PASSWORD }}
-          tags: "latest,${{ GITHUB_RUN_NUMBER }}"
+          tags: "latest,${{ env.GITHUB_RUN_NUMBER }}"
 
   
