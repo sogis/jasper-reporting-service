@@ -1,0 +1,21 @@
+name: jasper-reporting-service
+
+on: [push]
+
+jobs:
+  build:
+    env:
+      DOCKER_ACCOUNT: sogis
+      DOCKER_REPO: jasper-reporting-service
+      DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+      DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}      
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Set up JDK 1.8
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+      - name: List all files (test)
+        run: ls -la 
+  
