@@ -10,6 +10,8 @@ jobs:
       DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
       DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}      
     runs-on: ubuntu-latest
+
+    # todo cache
     steps:
       - name: Checkout
         uses: actions/checkout@v1
@@ -36,6 +38,7 @@ jobs:
         uses: elgohr/Publish-Docker-Github-Action@2.12
         with:
           name: sogis/jasper-reporting-service
-          username: ${{ secrets.DOCKER_HUB_USER }}
-          password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          # TODO: tags
   
