@@ -1,6 +1,10 @@
 name: jasper-reporting-service
 
-on: [push]
+on:
+  push
+  schedule:
+    - cron: '0 0 * * *' # Once per day at midnight
+    
 
 jobs:
   build:
@@ -46,6 +50,6 @@ jobs:
           name: sogis/jasper-reporting-service
           username: ${{ secrets.DOCKER_HUB_USER }}
           password: ${{ secrets.DOCKER_HUB_PASSWORD }}
-          tags: "latest,$GITHUB_RUN_NUMBER"
+          tag_names: "latest,$GITHUB_RUN_NUMBER"
 
   
