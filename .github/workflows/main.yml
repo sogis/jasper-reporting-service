@@ -1,7 +1,9 @@
 name: jasper-reporting-service
 
 on:
-  push
+  push:
+    branches:
+      - master
   schedule:
     - cron: '0 0 * * *' # Once per day at midnight
     
