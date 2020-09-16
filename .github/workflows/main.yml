@@ -15,6 +15,7 @@ jobs:
       #DOCKER_REPO: jasper-reporting-service
       #DOCKER_PASSWORD: ${{secrets.DOCKER_HUB_PASSWORD}}
       DOCKER_USERNAME: ${{secrets.DOCKER_HUB_USER}}      
+      BUILD_NUMBER: ${{GITHUB_RUN_NUMBER}}      
     runs-on: ubuntu-latest
 
     # todo cache
@@ -50,6 +51,6 @@ jobs:
           name: sogis/jasper-reporting-service
           username: ${{ secrets.DOCKER_HUB_USER }}
           password: ${{ secrets.DOCKER_HUB_PASSWORD }}
-          tags: "latest,${{ env.GITHUB_RUN_NUMBER }}"
+          tags: "latest,${{ env.BUILD_NUMBER }}"
 
   
