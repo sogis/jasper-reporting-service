@@ -6,7 +6,7 @@ on:
       - master
   schedule:
     - cron: '0 0 * * *' # Once per day at midnight
-
+    
 jobs:
   build:
     env:
@@ -14,7 +14,7 @@ jobs:
       #DOCKER_REPO: jasper-reporting-service
       #DOCKER_PASSWORD: ${{secrets.DOCKER_HUB_PASSWORD}}
       DOCKER_USERNAME: ${{secrets.DOCKER_HUB_USER}}      
-      BUILD_NUMBER: ${GITHUB_RUN_NUMBER}
+      BUILD_NUMBER: ${{ github.run_number }}
     runs-on: ubuntu-latest
 
     # todo cache
