@@ -22,6 +22,8 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 1.8
+      - name: List all files (test)
+        run: ls -la jasper-reporting-service
       - name: Install fonts.jar
         run: |
           mvn -f jasper-reporting-service/pom.xml install:install-file -Dfile=demo/fonts/fonts-extension.jar -DgroupId=local.jasperFontOverrides -DartifactId=local.jasperFontOverrides -Dversion=1.0 -Dpackaging=jar -DlocalRepositoryPath=$HOME/.m2/repository
