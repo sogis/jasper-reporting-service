@@ -47,11 +47,11 @@ jobs:
       - name: List all files (test)
         run: ls -la jasper-reporting-service/target
       - name: Build and publish docker image
-        uses: elgohr/Publish-Docker-Github-Action@2.12
+        uses: elgohr/Publish-Docker-Github-Action@master
         with:
           name: sogis/jasper-reporting-service
           username: ${{ secrets.DOCKER_HUB_USER }}
           password: ${{ secrets.DOCKER_HUB_PASSWORD }}
-          tag_names: "latest,$GITHUB_RUN_NUMBER"
+          tags: "latest,$GITHUB_RUN_NUMBER"
 
   
