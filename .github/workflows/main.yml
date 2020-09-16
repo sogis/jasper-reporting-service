@@ -45,5 +45,5 @@ jobs:
           username: ${{ secrets.DOCKER_HUB_USER }}
           password: ${{ secrets.DOCKER_HUB_PASSWORD }}
           tags: "latest,${{ env.BUILD_NUMBER }}"
-      - name: List all files (test)
+      - name: List docker images
         run: docker images
