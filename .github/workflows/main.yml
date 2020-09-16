@@ -7,7 +7,7 @@ jobs:
     env:
       DOCKER_ACCOUNT: sogis
       #DOCKER_REPO: jasper-reporting-service
-      DOCKER_PASSWORD: ${{secrets.DOCKER_HUB_PASSWORD}}
+      #DOCKER_PASSWORD: ${{secrets.DOCKER_HUB_PASSWORD}}
       DOCKER_USERNAME: ${{secrets.DOCKER_HUB_USER}}      
     runs-on: ubuntu-latest
 
