@@ -46,4 +46,4 @@ jobs:
           password: ${{ secrets.DOCKER_HUB_PASSWORD }}
           tags: "latest,${{ env.BUILD_NUMBER }}"
       - name: List docker images
-        run: docker images
+        run: docker images 
