@@ -13,5 +13,8 @@ WORKDIR /srv/jasper-reporting-service
 #RUN wget -O jasper-reporting-service.jar --header="PRIVATE-TOKEN: $AUTH_TOKEN" "$JASPER_SERVICE_URL"
 COPY jasper-reporting-service/target/jasper-reporting-service-*.jar jasper-reporting-service.jar
 
+#Log4j 2 CVE-2021-44228
+ENV LOG4J_FORMAT_MSG_NO_LOOKUPS=true
+
 # Run service
 ENTRYPOINT ["java", "-DJava.awt.headless=true", "-jar", "jasper-reporting-service.jar"]
