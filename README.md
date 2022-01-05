@@ -7,3 +7,5 @@ Die Schriftarten werden in einer `fonts-extension.jar`-Datei vorgehalten, welche
 Der Build muss bei Bedarf manuell gestartet werden und wird täglich um Mitternacht ausgelöst.
 
 Es wird immer ein `latest` und ein `build number` Image getaggt.
+
+
